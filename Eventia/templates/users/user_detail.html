@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5" style="max-width: 600px;">
+    <h2 class="mb-4 text-center">Profile</h2>
+    <div class="card mb-3">
+        {% if profile.photo %}
+            <img src="{{ profile.photo.url }}" class="card-img-top" alt="Profile Photo">
+        {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{ profile.user.username }}</h5>
+            <p class="card-text"><strong>Email:</strong> {{ profile.user.email }}</p>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ p_form.as_p }}
+                <button type="submit" class="btn btn-primary">Update Profile</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

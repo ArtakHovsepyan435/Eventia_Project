@@ -1,0 +1,56 @@
+.event-card-link {
+  display: block;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.event-card-link .event-card {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+
+.event-card-link::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px 3px rgba(0, 123, 255, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.event-card-link:hover {
+  transform: scale(1.03);
+}
+
+.event-card-link:hover::before {
+  opacity: 1;
+}
+
+.no-events {
+    background-color: #f8f9fa;
+    border: 2px dashed #6c757d;
+    border-radius: 12px;
+    color: #495057;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 2rem;
+}
+.no-events h3 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.75rem;
+}
+.no-events p {
+    font-size: 1rem;
+    color: #6c757d;
+}

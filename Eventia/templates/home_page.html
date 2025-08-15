@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+
+<section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1 class="fade-in">Welcome to <span>Eventia</span></h1>
+        <p class="typewriter">Your gateway to unforgettable experiences</p>
+        <a href="{% url 'all_events' %}" class="btn">Explore Events</a>
+    </div>
+</section>
+{% endblock %}
